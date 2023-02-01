@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './composant/App/App';
 import reportWebVitals from './reportWebVitals';
+//import Entete from './composant/Entete/Entete';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    {/* <Entete /> */}
+    
+
   </React.StrictMode>
 );
 

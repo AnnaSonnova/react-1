@@ -16,6 +16,11 @@ export default class Entete  extends React.Component {
     
       <div className="Entete">
         <h1>{ entete }</h1>
+        <ul>
+          <li>
+            
+          </li>
+        </ul>
         
        
       

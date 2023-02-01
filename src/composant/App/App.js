@@ -32,8 +32,8 @@ export default class App extends React.Component {
     return (
     
       <div className="App">
-        
-          <Entete/>
+        <Entete/>
+          
           
           <button onClick={this.augmenteCompte}>
             Clique({this.state.compteur}) 

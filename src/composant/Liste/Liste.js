@@ -19,7 +19,7 @@ export default class Liste extends React.Component {
     
       <div className="Liste">
         <h1>{ liste }</h1>
-       <p>Compteur : {this.props.compteur}</p>
+        <p>Compteur : {this.props.compteur}</p>
 
       </div>
     );
