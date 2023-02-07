@@ -1,31 +1,34 @@
-
 import React from 'react';
 import './Entete.css';
 
-export default class Entete  extends React.Component {
-
-  constructor(){
-    super();
-   
+export default class Entete extends React.Component{
+  constructor(props){
+    super(props);
+    //this.state = {estConnecte : false}
+    //this.connection = this.connection.bind(this)
   }
-  
-  render(){
-    let entete = "Entete";
-    
-    return (
-    
-      <div className="Entete">
-        <h1>{ entete }</h1>
-        <ul>
-          <li>
-            
-          </li>
-        </ul>
-        
-       
-      
 
-      </div>
+ /* connection() {
+    this.setState({
+      estConnecte : !this.state.estConnecte
+    });
+  }*/
+
+  render(){
+    let entete = "Biero";
+    let btnConnecter = (this.props.estConnecte ? "Se déconnecter": "Se connecter")
+    return (
+      <header className="entete">
+        <h1>{ entete }</h1>
+        <button onClick={this.props.seConnecter}>{btnConnecter}</button>
+        <nav>
+          <ul>
+            <li>Nav 1</li>
+            <li>Nav 2</li>
+            <li>Nav 3</li>
+          </ul>
+        </nav>
+      </header>
     );
   }
 }
@@ -58,3 +61,5 @@ export default class Entete  extends React.Component {
 // }
 
 //export default Entete;
+
+

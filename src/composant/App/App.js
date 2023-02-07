@@ -1,45 +1,48 @@
-
 import React from 'react';
 import Entete from '../Entete/Entete';
-import Liste from '../Liste/Liste';
+import ListeProduit from '../ListeProduit/ListeProduit';
 import './App.css';
 
-export default class App extends React.Component {
-
+export default class App extends React.Component{
   constructor(){
-    super();
-    this.message = "cest un message";
-    //this.compteur = 0;
-    this.state = {
-      compteur : 0
+    super();  // Appel explicite au constructeur de la classe React.Component
+    this.message = "Ceci est un message";
+     //this.compteur = 0;
+    this.state = { 
+      
+      estConnecte : false
     };
 
-    this.augmenteCompte = this.augmenteCompte.bind(this);
+    //this.augmenteCompte = this.augmenteCompte.bind(this);
+    this.connection = this.connection.bind(this);
   }
-  
 
-  augmenteCompte(){
-
+  connection() {
     this.setState({
-      compteur : this.state.compteur+1
-    })
-    //this.compteur++;
-    console.log(this.state.compteur);
+      estConnecte : !this.state.estConnecte
+    });
   }
+
+  // augmenteCompte(){
+  //   //this.state.compteur++;
+  //   this.setState({
+  //     compteur : this.state.compteur+1
+  //   })
+    
+  //   //this.compteur++;
+  //   console.log(this.state.compteur);
+   
+  // }
 
   render(){
-    
     return (
-    
-      <div className="App">
-        <Entete/>
-          
-          
-          <button onClick={this.augmenteCompte}>
-            Clique({this.state.compteur}) 
-          </button>
-          <Liste compteur={this.state.compteur}/>
-      </div>
+      <section className='App'>
+        <Entete seConnecter={this.connection} estConnecte={this.state.estConnecte} />
+        {/* <button onClick={this.augmenteCompte}>Clique ({this.state.compteur})</button> */}
+        <ListeProduit estConnecte={this.state.estConnecte}  />
+  
+
+      </section>
     );
   }
 }
@@ -95,3 +98,5 @@ export default class App extends React.Component {
 // }
 
 //export default App;
+
+
